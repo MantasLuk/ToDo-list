@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col mt-8">
+        <div class="card">
+            <div class="card-header">ToDo list</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let task of tasks; let i = index">
+                        {{i+1}}. TASK: <b>{{ task.assignment}}</b>
+                        <div>
+                            <div *ngIf="task.priority == 'rutina'" class="alert alert-success ">
+                                <strong>{{ task.priority }}</strong>
+                            </div>
+                            <div *ngIf="task.priority == 'skubu'" class="alert alert-warning" >
+                                <strong>{{ task.priority }}</strong>
+                            </div>
+                            <div *ngIf="task.priority == 'neskubu'" class="alert alert-primary" >
+                                <strong>{{ task.priority }}</strong>
+                            </div>
+                            <div *ngIf="task.priority == 'labaiSkubu'" class="alert alert-danger" >
+                                <strong>{{ task.priority }}</strong>
+                            </div>
+                        </div>
+                    
+
+
+
+
+
+
+
+                        <!-- [<b>{{task.priority}}</b> ]  -->
+
+
+
+                        <button class="btn btn-danger float-end" 
+                        (click)="deleteTask(i)">Done!</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">Add new task</div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="" class="form-label">Task:</label>
+                    <input type="text" class="form-control" #newTask>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Priority:</label>
+                    <select class="form-control" #newPriority>
+                        <option value="blank" disabled selected>---Select---</option>
+                        <option value="rutina">Rutina</option>
+                        <option value="skubu">Skubu</option>
+                        <option value="neskubu">Nekubu</option>
+                        <option value="labaiSkubu">Labai skubus</option>
+                    </select>
+                </div>
+                <button class="btn btn-success" (click)="addNewTask(newTask, newPriority)">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
