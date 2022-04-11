@@ -5,23 +5,23 @@
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item" *ngFor="let task of tasks; let i = index">
-                        {{i+1}}. TASK: <b>{{ task.assignment}}</b>
-                        <div>
-                            <div *ngIf="task.priority == 'rutina'" class="alert alert-success ">
+                        <div class="alert alert-secondary w-75 d-inline-block">{{i+1}}. TASK: <b>{{ task.assignment }}</b></div>
+                        <div class="d-inline" >
+                            <div *ngIf="task.priority == 'Rutina'" class="alert alert-success w-25 d-inline-block">
                                 <strong>{{ task.priority }}</strong>
                             </div>
-                            <div *ngIf="task.priority == 'skubu'" class="alert alert-warning" >
+                            <div *ngIf="task.priority == 'Skubu'" class="alert alert-warning w-25 d-inline-block" >
                                 <strong>{{ task.priority }}</strong>
                             </div>
-                            <div *ngIf="task.priority == 'neskubu'" class="alert alert-primary" >
+                            <div *ngIf="task.priority == 'Neskubu'" class="alert alert-primary w-25 d-inline-block" >
                                 <strong>{{ task.priority }}</strong>
                             </div>
-                            <div *ngIf="task.priority == 'labaiSkubu'" class="alert alert-danger" >
+                            <div *ngIf="task.priority == 'Labai Skubu'" class="alert alert-danger w-25 d-inline-block" >
                                 <strong>{{ task.priority }}</strong>
                             </div>
                         </div>
                     
-                        <button class="btn btn-danger float-end" 
+                        <button class="btn btn-dark btn-sm w-25 float-end" 
                         (click)="deleteTask(i)">Done!</button>
                     </li>
                 </ul>
@@ -41,10 +41,10 @@
                     <label for="" class="form-label">Priority:</label>
                     <select class="form-control" #newPriority>
                         <option value="blank" disabled selected>---Select---</option>
-                        <option value="rutina">Rutina</option>
-                        <option value="skubu">Skubu</option>
-                        <option value="neskubu">Nekubu</option>
-                        <option value="labaiSkubu">Labai skubus</option>
+                        <option value="Rutina">Rutina</option>
+                        <option value="Skubu">Skubu</option>
+                        <option value="Neskubu">Nekubu</option>
+                        <option value="Labai Skubu">Labai skubus</option>
                     </select>
                 </div>
                 <button class="btn btn-success" (click)="addNewTask(newTask, newPriority)">Add</button>
