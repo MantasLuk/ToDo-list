@@ -3,28 +3,7 @@
         <div class="card">
             <div class="card-header">ToDo list</div>
             <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let task of tasks; let i = index">
-                        <div class="alert alert-secondary w-75 d-inline-block">{{i+1}}. <b>{{ task.assignment }}</b></div>
-                        <div class="d-inline" >
-                            <div *ngIf="task.priority == 'Routine'" class="alert alert-success w-25 d-inline-block text-center">
-                                <strong>{{ task.priority }}</strong>
-                            </div>
-                            <div *ngIf="task.priority == 'Not important'" class="alert alert-primary w-25 d-inline-block text-center" >
-                                <strong>{{ task.priority }}</strong>
-                            </div>
-                            <div *ngIf="task.priority == 'Important'" class="alert alert-warning w-25 d-inline-block text-center" >
-                                <strong>{{ task.priority }}</strong>
-                            </div>
-                            <div *ngIf="task.priority == 'High Priority'" class="alert alert-danger w-25 d-inline-block text-center" >
-                                <strong>{{ task.priority }}</strong>
-                            </div>
-                        </div>
-                    
-                        <button class="btn btn-dark btn-sm w-25 float-end" 
-                        (click)="deleteTask(i)">Done!</button>
-                    </li>
-                </ul>
+                        <app-task-item *ngFor="let task of tasks; let i=index"  class="col-md-4 w-100" [task]="task" [index] ="i"> </app-task-item>
             </div>
         </div>
     </div>
