@@ -16,7 +16,7 @@ export class TasksService {
   }
 
   public save(){
-    localStorage.setItem("products", JSON.stringify(this.tasks));
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
 
   public add(assignment:string, priority:string){
