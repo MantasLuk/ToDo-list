@@ -1,7 +1,7 @@
 <div class="card mt-3" >
     <div class="card-body">
         <div class="alert alert-info w-75 d-inline-block"><b>{{index+1}}. {{task.assignment}}</b></div>
-        <div class="d-inline" >
+        <div class=" d-inline" >
             <div *ngIf="task.priority == 'Routine'" class="alert alert-success w-25 d-inline-block text-center">
                 <strong>{{ task.priority }}</strong>
             </div>
@@ -15,6 +15,6 @@
                 <strong>{{ task.priority }}</strong>
             </div>
         <hr>
-        <button class="btn btn-danger float-end" (click)="deleteTask()">Delete Task</button>
+        <button class="btn btn-danger float-end" (click)="deleteTask()">Task Complete!</button>
     </div>
 </div>
